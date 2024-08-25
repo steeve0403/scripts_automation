@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect('albums2.db')
+connection = sqlite3.connect('albums.db')
 cursor = connection.cursor()
 
 cursor.execute("""
