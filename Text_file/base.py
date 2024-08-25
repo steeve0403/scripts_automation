@@ -18,14 +18,14 @@ file.close()
 """
 
 # ---------- Exercise ----------
-"""
+
 file = open('number.txt', 'w')
 file.write("Number txt:\n")
 for i in range(1, 11):
     file.write(str(i) + '\n')
 
 file.close()
-"""
+
 
 # ---------- Read ----------
 """
