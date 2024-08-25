@@ -27,7 +27,7 @@ CREATE TABLE album (
     );
 
 INSERT INTO artiste (name) VALUES ("Mickael Jackson")
-INSERT INTO ALBUM (title, release_date) VALUES ("Thriller", 1983)
+INSERT INTO ALBUM (artiste_id, title, release_date) VALUES (1, "Thriller", 1983)
 
 UPDATE album SET release_date = 1982 WHERE title;
 
