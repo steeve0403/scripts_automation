@@ -44,3 +44,29 @@ add_data_from_wb(wb2, data)
 add_data_from_wb(wb3, data)
 
 print(data)
+
+# ---------- Step Three ----------
+
+output_wb = openpyxl.Workbook()
+sheet = output_wb.active
+# sheet.title = "Sheet1"
+
+sheet["A1"] = "Article"
+sheet["B1"] = "October"
+sheet["C1"] = "November"
+sheet["D1"] = "December"
+
+
+
+row = 2
+for i in data.items():
+    # print(i)
+    article_name = i[0]
+    sales = i[1]
+    sheet.cell(row, 1).value = article_name
+    for j in range(0, len(sales)):
+        sheet.cell(row, 2+j).value = sales[j]
+    row += 1
+
+
+output_wb.save("total_quarterly_sales.xlsx")
