@@ -68,5 +68,14 @@ for i in data.items():
         sheet.cell(row, 2+j).value = sales[j]
     row += 1
 
+# ---------- Step Four ----------
+
+chart_ref =  openpyxl.chart.Reference(sheet, min_col=2, min_row=2, max_col=sheet.max_column, max_row=sheet.max_row)
+chart_ref = openpyxl.chart.Series(chart_ref, title="Total Sales $")
+chart = openpyxl.chart.BarChart()
+chart.title = "Evolution of fruit prices"
+chart.append(chart_ref)
+
+sheet.add_chart(chart, "F2")
 
 output_wb.save("total_quarterly_sales.xlsx")
